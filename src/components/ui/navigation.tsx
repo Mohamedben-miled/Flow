@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {useRef, useEffect, useState} from 'react';
 import Image from 'next/image';
 import {cn} from '@/lib/utils';
+import {Leaf} from 'lucide-react';
 
 export default function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
@@ -58,6 +59,7 @@ export default function Navigation() {
             className="mr-2"
           />
           <span className="text-xl font-bold">Flow Workspace</span>
+          <Leaf className="ml-2 text-primary" />
         </Link>
         <div className="flex space-x-4">
           {sections.map(section => (
@@ -65,9 +67,9 @@ export default function Navigation() {
               key={section}
               href={`#${section}`}
               className={cn(
-                'hover:text-green-500 transition-colors duration-300',
+                'hover:text-primary transition-colors duration-300 flex items-center',
                 activeSection === section
-                  ? 'text-green-500 font-semibold'
+                  ? 'text-primary font-semibold'
                   : 'text-foreground'
               )}
               onClick={e => {
