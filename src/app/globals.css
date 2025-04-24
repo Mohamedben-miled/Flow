@@ -42,6 +42,12 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Additional Colors */
+    --flow-yellow: 48 95% 57%;
+    --flow-orange: 24 94% 53%;
+    --flow-purple: 265 68% 54%;
+    --flow-pink: 334 86% 63%;
   }
 
   .dark {
@@ -77,6 +83,12 @@ body {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Dark Mode Additional Colors */
+    --flow-yellow: 48 95% 67%;
+    --flow-orange: 24 94% 63%;
+    --flow-purple: 265 68% 64%;
+    --flow-pink: 334 86% 73%;
   }
 }
 
@@ -88,4 +100,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
