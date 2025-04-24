@@ -16,207 +16,199 @@ import { useEffect, useState } from 'react';
 
 const galleryImages = [
   {
-    src: 'https://picsum.photos/id/10/800/600',
+    src: '/images/gallery1.jpg',
     alt: 'Coworking Space Interior',
   },
   {
-    src: 'https://picsum.photos/id/20/800/600',
+    src: '/images/gallery2.jpg',
     alt: 'Comfortable Chairs',
   },
   {
-    src: 'https://picsum.photos/id/30/800/600',
+    src: '/images/gallery3.jpg',
     alt: 'Meeting Room',
   },
   {
-    src: 'https://picsum.photos/id/40/800/600',
+    src: '/images/gallery4.jpg',
     alt: 'Kitchen Area',
   },
   {
-    src: 'https://picsum.photos/id/50/800/600',
+    src: '/images/gallery5.jpg',
     alt: 'Gaming Area',
   },
   {
-    src: 'https://picsum.photos/id/60/800/600',
+    src: '/images/gallery6.jpg',
     alt: 'Workspace',
   },
 ];
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState('home');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'features', 'pricing', 'gallery', 'contact'];
-      const scrollPosition = window.scrollY;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleNavClick = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
-    <div>
+    <div className="container mx-auto px-4 py-16">
       {/* Hero Section */}
-      <section
-        id="home"
-        className="relative text-center text-white py-24"
-        style={{
-          backgroundImage: `url('https://picsum.photos/1200/800?blur=5')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="relative z-10">
-          <h1 className="text-5xl font-bold mb-4">A Really Good Place to Be</h1>
-          <p className="text-lg mb-8">
-            Your working solutions for productivity, mental comfort, and
-            success.
-          </p>
-        </div>
+      <section id="home" className="text-center">
+        <Image
+          src="/images/hero.jpg"
+          width={1200}
+          height={400}
+          alt="Flow Coworking Space"
+          className="rounded-lg shadow-md mb-8"
+        />
+        <h1 className="text-4xl font-bold mb-4">
+          Welcome to Flow Coworking Space
+        </h1>
+        <p className="text-lg mb-8">
+          Hey there! We're Flow, your friendly neighborhood coworking space in
+          Soukra. We've created a cozy, nature-inspired environment where you
+          can work, meet, and grow. Come join our community!
+        </p>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-16 bg-gray-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
-            The Green Box - Where Productivity Meets Comfort.
-          </h2>
-          <div className="flex justify-center">
-            <Image
-              src="https://picsum.photos/600/400"
-              alt="Features Diagram"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-md"
-            />
+      <section id="features" className="mt-16">
+        <h2 className="text-2xl font-semibold mb-4">Why Choose Flow?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 className="text-xl font-medium mb-2">Comfortable Workstations</h3>
+            <p className="text-muted-foreground">
+              Ergonomic chairs and spacious desks to maximize your productivity.
+            </p>
           </div>
-          <p className="text-gray-600 text-center mt-8">
-            Located in the heart of El Menzah 6 and Le Kram, The Green Box is
-            your ideal coworking space, a harmonious blend of urban energy and
-            natural tranquility. We cater to creatives, entrepreneurs, and
-            visionaries, offering a 24-hour coworking environment with great
-            WI-FI, free food, and a student-friendly atmosphere.
-          </p>
-          <p className="text-gray-600 text-center mt-4">
-            Whether you need a quiet shared office space or a private office,
-            we've got you covered. Our community-centric approach fosters a
-            vibrant, productive, and team-comradery workspace. Join us for an
-            accessible and ultimate coworking experience rooted in support and
-            community.
-          </p>
-          <div className="text-center mt-8">
+          <div>
+            <h3 className="text-xl font-medium mb-2">High-Speed Internet</h3>
+            <p className="text-muted-foreground">
+              Reliable and fast internet access to keep you connected.
+            </p>
+          </div>
+          <div>
+            <h3 className="text-xl font-medium mb-2">Meeting Rooms</h3>
+            <p className="text-muted-foreground">
+              Professional meeting rooms equipped with presentation facilities.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="mt-16">
+        <h2 className="text-3xl font-bold mb-8 text-center">Pricing Plans</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="rounded-lg border shadow-md p-6">
+            <h2 className="text-xl font-semibold mb-2">Day Pass</h2>
+            <p className="text-4xl font-bold mb-4">10 TND/day</p>
+            <p className="text-muted-foreground">
+              Perfect for those who need a workspace for a day.
+            </p>
             <Link
               href="#contact"
-              onClick={() => handleNavClick('contact')}
-              className="inline-block bg-accent text-accent-foreground py-2 px-6 rounded-full hover:bg-accent/80 transition-colors"
+              className="mt-4 bg-accent text-accent-foreground py-2 px-4 rounded-md hover:bg-accent/80 transition-colors w-full"
             >
-              Next level up
+              Book Now
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Space for Green Innovation */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">
-            A space for green innovation
-          </h2>
-          <p className="text-gray-600">
-            Inspire creativity and productivity with a harmonious coworking
-            space.
-          </p>
-        </div>
-      </section>
-
-      {/* Our Happy Clients */}
-      <section id="testimonials" className="py-16 bg-white">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-semibold text-center text-gray-800 mb-8">
-            Our Happy Clients!
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <p className="text-gray-600 italic">
-                "Amazing coworking space! Great vibe, productive atmosphere."
-              </p>
-              <p className="text-gray-800 font-semibold mt-4">Nadia Hassen</p>
-            </div>
-            {/* Testimonial 2 */}
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <p className="text-gray-600 italic">
-                "A wonderful space and a wonderful team !! I highly recommend
-                it. Liquidity, comfort, and impeccable service. Thank you
-                Green Box team !! See you soon :-)."
-              </p>
-              <p className="text-gray-800 font-semibold mt-4">
-                Heni Ksontini Inga
-              </p>
-            </div>
-            {/* Testimonial 3 */}
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <p className="text-gray-600 italic">
-                "Best co-working space in town."
-              </p>
-              <p className="text-gray-800 font-semibold mt-4">Firas Sassi</p>
-            </div>
+          <div className="rounded-lg border shadow-md p-6">
+            <h2 className="text-xl font-semibold mb-2">Monthly Membership</h2>
+            <p className="text-4xl font-bold mb-4">250 TND/month</p>
+            <p className="text-muted-foreground">
+              Ideal for regular coworkers seeking a consistent workspace.
+            </p>
+            <Link
+              href="#contact"
+              className="mt-4 bg-accent text-accent-foreground py-2 px-4 rounded-md hover:bg-accent/80 transition-colors w-full"
+            >
+              Sign Up
+            </Link>
+          </div>
+          <div className="rounded-lg border shadow-md p-6">
+            <h2 className="text-xl font-semibold mb-2">Meeting Room</h2>
+            <p className="text-4xl font-bold mb-4">10 TND/hour</p>
+            <p className="text-muted-foreground">
+              Book our meeting room for team meetings or client presentations.
+            </p>
+            <Link
+              href="#contact"
+              className="mt-4 bg-accent text-accent-foreground py-2 px-4 rounded-md hover:bg-accent/80 transition-colors w-full"
+            >
+              Reserve Now
+            </Link>
+          </div>
+          <div className="rounded-lg border shadow-md p-6">
+            <h2 className="text-xl font-semibold mb-2">Call Boxes</h2>
+            <p className="text-4xl font-bold mb-4">Free</p>
+            <p className="text-muted-foreground">
+              Enjoy private call boxes with free access for all members.
+            </p>
+            <button className="mt-4 bg-muted text-foreground py-2 px-4 rounded-md w-full disabled">
+              Available
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Reservation */}
-      <section id="reservation" className="py-16 bg-gray-50">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">
-            Reservation
-          </h2>
-          <p className="text-gray-600">
-            To make a reservation or learn more about our services, contact us
-            today!
-          </p>
-          <Link
-            href="#contact"
-            onClick={() => handleNavClick('contact')}
-            className="inline-block bg-accent text-accent-foreground py-2 px-6 rounded-full hover:bg-accent/80 transition-colors mt-4"
-          >
-            Make a space
-          </Link>
+      {/* Gallery Section */}
+      <section id="gallery" className="mt-16">
+        <h2 className="text-3xl font-bold mb-8 text-center">Photo Gallery</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {galleryImages.map((image, index) => (
+            <div key={index} className="rounded-lg overflow-hidden shadow-md">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={800}
+                height={600}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section id="contact" className="py-8">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-800 mb-4">
-            Full-time resources
-          </h2>
-          <p className="text-gray-600">Menzah 6 +216 92 203 556</p>
-          <p className="text-gray-600">La Marsa +216 92 203 117</p>
-          <p className="text-gray-600">For any claim +216 90 203 724</p>
+      {/* Contact Section */}
+      <section id="contact" className="mt-16">
+        <h2 className="text-3xl font-bold mb-8 text-center">Contact Us</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Send us a message</h2>
+            <form>
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full border rounded-md py-2 px-3 mb-2"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full border rounded-md py-2 px-3 mb-2"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows={4}
+                className="w-full border rounded-md py-2 px-3 mb-4"
+              ></textarea>
+              <button className="bg-accent text-accent-foreground py-2 px-4 rounded-md hover:bg-accent/80 transition-colors">
+                Send Message
+              </button>
+            </form>
+          </div>
+          <div>
+            <h2 className="text-xl font-semibold mb-4">Contact Information</h2>
+            <p>
+              <strong>Address:</strong> Soukra, Ariana, Tunisia
+            </p>
+            <p>
+              <strong>Email:</strong> info@flowcowork.com
+            </p>
+            <p>
+              <strong>Phone:</strong> +216 12 345 678
+            </p>
+            <div className="mt-4 rounded-lg overflow-hidden shadow-md">
+              <Image
+                src="https://picsum.photos/400/300"
+                width={400}
+                height={300}
+                alt="Map of Soukra, Ariana, Tunisia"
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
