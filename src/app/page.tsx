@@ -214,7 +214,7 @@ export default function Home() {
             <p className="text-muted-foreground">
               Enjoy private, soundproof call boxes.
             </p>
-            <button className="mt-4 bg-muted text-foreground py-2 px-4 rounded-md w-full disabled">
+            <button className="mt-4 bg-primary text-primary-foreground py-2 px-4 rounded-md w-full">
               Available
             </button>
           </div>
@@ -311,4 +311,5 @@ export default function Home() {
     </div>
   );
 }
+
 
