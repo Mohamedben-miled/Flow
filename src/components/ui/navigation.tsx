@@ -18,9 +18,6 @@ export default function Navigation() {
           <Link href="/gallery" className="hover:text-accent">
             Gallery
           </Link>
-          <Link href="/booking" className="hover:text-accent">
-            Booking
-          </Link>
           <Link href="/contact" className="hover:text-accent">
             Contact
           </Link>
