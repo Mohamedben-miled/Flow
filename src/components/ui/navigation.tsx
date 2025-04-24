@@ -12,12 +12,6 @@ export default function Navigation() {
           <Link href="/" className="hover:text-accent">
             Home
           </Link>
-          <Link href="/pricing" className="hover:text-accent">
-            Pricing
-          </Link>
-          <Link href="/gallery" className="hover:text-accent">
-            Gallery
-          </Link>
           <Link href="/contact" className="hover:text-accent">
             Contact
           </Link>
