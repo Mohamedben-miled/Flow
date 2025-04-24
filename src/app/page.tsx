@@ -16,27 +16,27 @@ import { useEffect, useState } from 'react';
 
 const galleryImages = [
   {
-    src: '/images/gallery1.jpg',
+    src: 'https://picsum.photos/id/10/800/600',
     alt: 'Coworking Space Interior',
   },
   {
-    src: '/images/gallery2.jpg',
+    src: 'https://picsum.photos/id/20/800/600',
     alt: 'Comfortable Chairs',
   },
   {
-    src: '/images/gallery3.jpg',
+    src: 'https://picsum.photos/id/30/800/600',
     alt: 'Meeting Room',
   },
   {
-    src: '/images/gallery4.jpg',
+    src: 'https://picsum.photos/id/40/800/600',
     alt: 'Kitchen Area',
   },
   {
-    src: '/images/gallery5.jpg',
+    src: 'https://picsum.photos/id/50/800/600',
     alt: 'Gaming Area',
   },
   {
-    src: '/images/gallery6.jpg',
+    src: 'https://picsum.photos/id/60/800/600',
     alt: 'Workspace',
   },
 ];
@@ -47,7 +47,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="text-center">
         <Image
-          src="/images/hero.jpg"
+          src="https://picsum.photos/1200/400"
           width={1200}
           height={400}
           alt="Flow Coworking Space"
@@ -57,9 +57,10 @@ export default function Home() {
           Welcome to Flow Coworking Space
         </h1>
         <p className="text-lg mb-8">
-          Hey there! We're Flow, your friendly neighborhood coworking space in
-          Soukra. We've created a cozy, nature-inspired environment where you
-          can work, meet, and grow. Come join our community!
+          Step into Flow, where productivity blossoms in a vibrant, plant-filled
+          environment. Our coworking space in Soukra is designed to inspire
+          creativity and foster a sense of community. Join us and watch your
+          ideas grow!
         </p>
       </section>
 
@@ -68,21 +69,30 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4">Why Choose Flow?</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-xl font-medium mb-2">Comfortable Workstations</h3>
+            <h3 className="text-xl font-medium mb-2">
+              Inspiring Green Spaces
+            </h3>
             <p className="text-muted-foreground">
-              Ergonomic chairs and spacious desks to maximize your productivity.
+              Surround yourself with lush greenery and natural light, creating a
+              refreshing and energizing workspace.
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-medium mb-2">High-Speed Internet</h3>
+            <h3 className="text-xl font-medium mb-2">
+              Ergonomic Comfort
+            </h3>
             <p className="text-muted-foreground">
-              Reliable and fast internet access to keep you connected.
+              Enjoy comfortable, ergonomic workstations designed to support your
+              well-being and boost productivity.
             </p>
           </div>
           <div>
-            <h3 className="text-xl font-medium mb-2">Meeting Rooms</h3>
+            <h3 className="text-xl font-medium mb-2">
+              Community & Collaboration
+            </h3>
             <p className="text-muted-foreground">
-              Professional meeting rooms equipped with presentation facilities.
+              Connect with like-minded professionals, share ideas, and
+              collaborate in a supportive and inspiring atmosphere.
             </p>
           </div>
         </div>
@@ -96,7 +106,7 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-2">Day Pass</h2>
             <p className="text-4xl font-bold mb-4">10 TND/day</p>
             <p className="text-muted-foreground">
-              Perfect for those who need a workspace for a day.
+              Experience Flow for a day and enjoy all our amenities.
             </p>
             <Link
               href="#contact"
@@ -109,7 +119,8 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-2">Monthly Membership</h2>
             <p className="text-4xl font-bold mb-4">250 TND/month</p>
             <p className="text-muted-foreground">
-              Ideal for regular coworkers seeking a consistent workspace.
+              Become a part of our thriving community with a monthly
+              membership.
             </p>
             <Link
               href="#contact"
@@ -122,7 +133,8 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-2">Meeting Room</h2>
             <p className="text-4xl font-bold mb-4">10 TND/hour</p>
             <p className="text-muted-foreground">
-              Book our meeting room for team meetings or client presentations.
+              Host your meetings in our well-equipped, plant-adorned meeting
+              room.
             </p>
             <Link
               href="#contact"
@@ -135,7 +147,8 @@ export default function Home() {
             <h2 className="text-xl font-semibold mb-2">Call Boxes</h2>
             <p className="text-4xl font-bold mb-4">Free</p>
             <p className="text-muted-foreground">
-              Enjoy private call boxes with free access for all members.
+              Enjoy private, soundproof call boxes surrounded by calming
+              greenery.
             </p>
             <button className="mt-4 bg-muted text-foreground py-2 px-4 rounded-md w-full disabled">
               Available
@@ -214,3 +227,4 @@ export default function Home() {
     </div>
   );
 }
+

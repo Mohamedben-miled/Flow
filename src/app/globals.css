@@ -21,7 +21,7 @@ body {
     --secondary-foreground: 51 37 26;  /* Chocolate */
     --muted: 232 245 236;   /* Mint Cream */
     --muted-foreground: 100 115 99; /* Moss */
-    --accent: 240 230 140; /* Khaki */
+    --accent: 144 238 144; /* LightGreen */
     --accent-foreground: 51 37 26;  /* Chocolate */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -95,3 +95,4 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
