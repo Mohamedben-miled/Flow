@@ -1,6 +1,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import BookingForm from '@/components/booking-form';
 
 export default function Home() {
   return (
@@ -27,6 +28,12 @@ export default function Home() {
         >
           Book Your Spot
         </Link>
+      </section>
+
+      {/* Booking Form Section */}
+      <section className="mt-16">
+        <h2 className="text-2xl font-semibold mb-4">Make a Reservation</h2>
+        <BookingForm />
       </section>
 
       {/* Features Section (Example) */}
@@ -56,4 +63,3 @@ export default function Home() {
     </div>
   );
 }
-
