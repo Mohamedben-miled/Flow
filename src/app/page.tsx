@@ -87,13 +87,13 @@ export default function Home() {
 
   return (
     <div className="container mx-auto px-4 py-16">
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="text-center mb-16 relative overflow-hidden rounded-lg shadow-md transition-all duration-300"
-      >
+  {/* Hero Section */}
+  <section
+      id="home"
+      className="text-center mb-16 relative overflow-hidden rounded-lg shadow-xl transition-all duration-300 group"
+  >
         <Image
-          src="https://images.unsplash.com/photo-1612832021644-776277799697?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+          src="/Assets/6af0d27f-ff20-4c68-9675-680c98520a3d.jpg"
           width={1200}
           height={400}
           alt="Flow Coworking Space"
